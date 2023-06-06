@@ -137,7 +137,7 @@ func getMatchUpdates(logger *logrus.Logger, sast_results []CxSASTClientGo.ScanRe
 func scanResultsMatch(logger *logrus.Logger, sast CxSASTClientGo.ScanResult, cx1 Cx1ClientGo.ScanResult) bool {
 	fails := 0
 
-	if sast.Language != cx1.Data.LanguageName || sast.Group != cx1.Data.Group || sast.QueryName != cx1.Data.QueryName {
+	if !strings.EqualFold(sast.Language, cx1.Data.LanguageName) || !strings.EqualFold(sast.Group, cx1.Data.Group) || !strings.EqualFold(sast.QueryName, cx1.Data.QueryName) {
 		logger.Tracef("   - Language/Group/Query doesn't match")
 		return false
 	}
