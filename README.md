@@ -4,8 +4,8 @@ Parses results from a provided xml report and pushes the statuses to a Checkmarx
 Usage: 
 XMLtoCx1 -h
 
-
 Usage of XMLtoCx1.exe:
+
     -apikey string
             CheckmarxOne API Key (if not using client id/secret)
     -client string
